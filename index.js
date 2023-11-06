@@ -15,7 +15,11 @@ const paymentRoutes = require("./routes/payment.routes");
 env.config();
 const app = express(); // express app object
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 
 // configuring body parser
 app.use(bodyParser.urlencoded({ extended: true }));
