@@ -17,23 +17,9 @@ const app = express(); // express app object
 
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["https://localhost:5173"],
   })
 );
-
-app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET,HEAD,OPTIONS,POST,PUT,PATCH"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, x-access-token"
-  );
-  next();
-});
 
 // configuring body parser
 app.use(bodyParser.urlencoded({ extended: true }));
